@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     min-height: 100vh;
@@ -9,31 +13,120 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #ffffff;
+    line-height: 1.7;
+}
+
+/* ===== Header ===== */
+header {
+    padding: 32px 16px 8px;
+    text-align: center;
 }
 
 h1 {
-    text-align: center;
-    color: white;
-    font-family: Arial, sans-serif;
+    margin: 0 0 16px;
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
     font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-ul {
-    list-style-type: none;
+/* ===== Navigasi ===== */
+nav ul {
+    list-style: none;
+    margin: 0;
     padding: 0;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-li {
+nav a {
     display: inline-block;
-    padding: 10px;
+    padding: 8px 20px;
+    border-radius: 999px;
+    background: rgba(7, 27, 58, 0.75);
+    border: 1px solid rgba(255, 215, 90, 0.6);
+    color: #ffd75a;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
 }
 
-img {
+nav a:hover,
+nav a.active {
+    background: #ffd75a;
+    color: #071B3A;
+    transform: translateY(-2px);
+}
+
+/* ===== Konten ===== */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+}
+
+.logo {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
+    margin: 8px auto 28px;
+    width: 220px;
+    max-width: 70%;
     height: auto;
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Kotak teks supaya terbaca di atas background */
+.card {
+    background: rgba(7, 27, 58, 0.85);
+    border: 1px solid rgba(255, 215, 90, 0.35);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #ffd75a;
+    font-size: 1.5rem;
+}
+
+.card p {
+    margin: 0;
+    text-align: justify;
+}
+
+/* Daftar anggota */
+.anggota {
+    margin: 0 0 20px;
+    padding-left: 24px;
+}
+
+.anggota li {
+    padding: 2px 0;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 0.9rem;
+    color: #cfd8ea;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* ===== HP ===== */
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+
+    .card p {
+        text-align: left;
+    }
 }
